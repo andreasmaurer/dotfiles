@@ -12,3 +12,6 @@
   ls = ls-files
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+[color]
+  ui = auto
+  interactive = auto

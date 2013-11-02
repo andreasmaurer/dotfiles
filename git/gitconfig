@@ -1,3 +1,14 @@
 [user]
   name = Andreas Maurer
   email = mail@andreasmaurer.net
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  ds = diff --staged
+  lg = log -p
+  ls = ls-files
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local

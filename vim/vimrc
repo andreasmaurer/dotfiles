@@ -5,3 +5,12 @@ set expandtab
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
+
+function! Preserve(command)
+    let winview = winsaveview()
+    execute a:command
+    call winrestview(winview)
+endfunction
+
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap <leader>= :call Preserve("normal gg=G")<CR>

@@ -5,12 +5,47 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'gmarik/vundle'
+Bundle 'molokai'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'rstacruz/vim-ultisnips-css'
+Bundle 'ap/vim-css-color'
+Bundle 'scrooloose/syntastic'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'walm/jshint.vim'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'juvenn/mustache.vim'
+Bundle 'mattn/emmet-vim'
+
 filetype plugin indent on
+
+let g:syntastic_javascript_checker = "jshint"
+let g:jshint_highlight_color = "Red"
+
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+syntax enable
 
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
+
+set ai
+set si
+set wrap
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
@@ -23,3 +58,32 @@ endfunction
 
 nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <leader>= :call Preserve("normal gg=G")<CR>
+
+set list listchars=tab:>-,trail:·,extends:>
+
+set mouse=
+set cursorline
+set cursorcolumn
+
+set t_Co=256
+colorscheme molokai
+
+set number
+set relativenumber
+set ruler
+
+set encoding=utf8
+set ffs=unix,dos,mac
+
+set backspace=indent,eol,start
+
+set ttimeoutlen=50
+
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_root_markers = ['.git','.project_root']
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.project$\|\.metadata$\|\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.exe$\|\.so$\|\.dll$|\.dylib$',
+  \ }
